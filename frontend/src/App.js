@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Sidebar from './components/sidebar';
+import HomePage from './components/Home';
+import VideoDetails from './components/VideoDetails';
+
+
 
 function App() {
+  const [selectedVideo, setSelectedVideo] = useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <Sidebar />
+      <HomePage 
+        selectedVideo={selectedVideo} 
+        setSelectedVideo={setSelectedVideo} 
+      />
+      {/* {selectedVideo && (
+        // <VideoDetails 
+        //   videoId={selectedVideo} 
+        //   onBack={() => setSelectedVideo(null)} 
+        // />
+      )} */}
     </div>
   );
 }

@@ -15,7 +15,7 @@ const API_KEY =process.env.GOOGLE_API_KEY
         part: 'snippet',
         q: query,
         type: 'video',
-        maxResults: 10,
+        maxResults: 20,
         key: API_KEY,
       },
     });

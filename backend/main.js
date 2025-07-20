@@ -6,9 +6,10 @@ import cors from 'cors';
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 
-app.use(cors());             // Enable CORS
+app.use(cors({origin: ["http://localhost:3000","https://cornelius-admin.vercel.app"],
+    credentials: true,}));             // Enable CORS
 app.use(express.json());     // Parse JSON bodies (important for POST!)
 app.use(express.urlencoded({ extended: false })); // Optional: support URL-encoded forms
 
